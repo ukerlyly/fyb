@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>黑客模拟器 v2.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 游戏介绍弹窗 -->
+    <div class="intro-modal" id="introModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>欢迎来到黑客模拟器 v2.0</h2>
+                <div class="language-switch">
+                    <button class="lang-btn active" data-lang="zh">中文</button>
+                    <button class="lang-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="intro-section zh">
+                    <p>这是一个交互式的黑客技能学习平台，通过模拟真实的渗透测试场景来学习网络安全知识。</p>
+                    <h3>游戏特点：</h3>
+                    <ul>
+                        <li>🖥️ 真实的命令行界面</li>
+                        <li>📚 详细的新手教程</li>
+                        <li>🎯 循序渐进的任务系统</li>
+                        <li>⭐ 技能成长系统</li>
+                        <li>🔧 工具解锁系统</li>
+                    </ul>
+                    <h3>开始使用：</h3>
+                    <ul>
+                        <li>输入 <code>help</code> 查看所有可用命令</li>
+                        <li>输入 <code>missions</code> 查看可用任务</li>
+                        <li>输入 <code>start 1</code> 开始第一个任务</li>
+                    </ul>
+                    <div class="security-notice">
+                        <p>⚠️ 安全提示：本工具仅用于学习和研究，请勿用于非法用途。</p>
+                    </div>
+                </div>
+                <div class="intro-section en" style="display: none;">
+                    <p>This is an interactive hacking skills learning platform that simulates real penetration testing scenarios.</p>
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>🖥️ Realistic Command Line Interface</li>
+                        <li>📚 Detailed Tutorials</li>
+                        <li>🎯 Progressive Mission System</li>
+                        <li>⭐ Skill Growth System</li>
+                        <li>🔧 Tool Unlock System</li>
+                    </ul>
+                    <h3>Getting Started:</h3>
+                    <ul>
+                        <li>Type <code>help</code> to see all available commands</li>
+                        <li>Type <code>missions</code> to view available missions</li>
+                        <li>Type <code>start 1</code> to begin the first mission</li>
+                    </ul>
+                    <div class="security-notice">
+                        <p>⚠️ Security Notice: This tool is for learning and research purposes only.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="start-btn" id="startGame">开始游戏</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 黑客帝国加载动画 -->
+    <div class="matrix-loading" id="matrixLoading">
+        <canvas id="matrixCanvas"></canvas>
+        <div class="loading-text">
+            <div class="text-line">正在入侵系统</div>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+                <div class="progress-text">0%</div>
+            </div>
+            <div class="status-text"></div>
+        </div>
+    </div>
+
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+            </div>
+            <div class="title">黑客模拟器 v2.0</div>
+        </div>
+        <div class="terminal-content">
+            <div class="output"></div>
+            <div class="input-line">
+                <span class="prompt">root@kali:~$</span>
+                <input type="text" class="command-input" autocomplete="off" autocapitalize="off" spellcheck="false" autofocus aria-label="命令输入">
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
